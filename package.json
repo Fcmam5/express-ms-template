@@ -1,0 +1,68 @@
+{
+  "name": "express-ms-template",
+  "version": "1.0.0",
+  "description": "Express template",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/bin/www.js",
+    "start.dev": "nodemon src/bin/www.js | bunyan",
+    "test": "jest",
+    "test.watch": "jest --watch",
+    "test.coverage": "jest --coverage --collectCoverageFrom='src/**/*.js'",
+    "test.ci": "jest --ci --runInBand --collectCoverageFrom='src/**/*.js'",
+    "lint": "eslint .",
+    "lint.fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fcmam5/warid.git"
+  },
+  "author": "Abdeldjalil Fortas (https://fcmam5.me)",
+  "contributors": [
+    "Amine AHMED BLAHA (https://github.com/amine-blaha)"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fcmam5/warid/issues"
+  },
+  "homepage": "https://github.com/Fcmam5/warid#readme",
+  "devDependencies": {
+    "@stryker-mutator/core": "2.4.0",
+    "@stryker-mutator/javascript-mutator": "2.4.0",
+    "@stryker-mutator/jest-runner": "2.4.0",
+    "@types/jest": "24.0.25",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-config-prettier": "6.9.0",
+    "eslint-plugin-import": "2.19.1",
+    "eslint-plugin-jest": "23.2.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-security": "1.4.0",
+    "eslint-plugin-sonarjs": "0.5.0",
+    "husky": "3.1.0",
+    "jest": "24.9.0",
+    "lint-staged": "9.5.0",
+    "nodemon": "2.0.2",
+    "prettier": "1.19.1"
+  },
+  "dependencies": {
+    "@hapi/boom": "9.0.0",
+    "@hapi/joi": "16.1.8",
+    "body-parser": "1.19.0",
+    "bunyan": "1.8.12",
+    "express": "4.17.1",
+    "helmet": "3.21.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run lint && npm run test.coverage"
+    }
+  },
+  "lint-staged": {
+    "./src/*.{js,ts}": [
+      "prettier --write",
+      "eslint . --fix-dry-run",
+      "git add"
+    ]
+  }
+}
