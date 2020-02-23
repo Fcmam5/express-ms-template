@@ -1,12 +1,10 @@
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 
-// routes
-const indexRoutes = require('./routes');
-
 const {
   handle404,
   handelServerErrors,
+  healthcheck,
 } = require('./controllers/genericHandlers');
 
 /**
@@ -22,7 +20,7 @@ const bootstrapApp = expressApp => {
   app.use(helmet());
 
   // Setup routes
-  app.use('/', indexRoutes);
+  app.use('/health', healthcheck);
 
   // catch 404 and forward to error handler
   app.use(handle404);

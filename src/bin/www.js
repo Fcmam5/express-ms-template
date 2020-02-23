@@ -5,8 +5,11 @@
  */
 const http = require('http');
 const express = require('express');
+const config = require('config');
 const logger = require('../lib/logger')(__filename);
 const app = require('../app')(express());
+
+const port = config.get('server.port') || 3000;
 
 /**
  * Create HTTP server.
@@ -18,7 +21,6 @@ const server = http.createServer(app);
  * Get port from environment and store in Express.
  */
 
-const port = process.env.PORT || '3000';
 app.set('port', port);
 
 /**
@@ -69,13 +71,13 @@ server.on('listening', onHttpListening);
  */
 const onSignal = (eventType, exitCode = 1) => () => {
   logger.warn(`Received ${eventType} signal, starting cleanup`);
-  process.exit(exitCode);
+  return [eventType, process.exit(exitCode)];
 };
 
-process.on('uncaughtException', onSignal('uncaughtException'));
-process.on('SIGINT', onSignal('SIGINT', 15));
-process.on('SIGTERM', onSignal('SIGTERM', 130));
-process.on('exit', onSignal('exit', 1));
+process.on(...onSignal('uncaughtException'));
+process.on(...onSignal('SIGINT', 15));
+process.on(...onSignal('SIGTERM', 130));
+process.on(...onSignal('exit', 1));
 
 // Start server
 server.listen(port);

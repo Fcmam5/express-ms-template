@@ -7,9 +7,9 @@
     "start": "node src/bin/www.js",
     "start.dev": "nodemon src/bin/www.js | bunyan",
     "test": "jest",
-    "test.watch": "jest --watch",
-    "test.coverage": "jest --coverage --collectCoverageFrom='src/**/*.js'",
-    "test.ci": "jest --ci --runInBand --collectCoverageFrom='src/**/*.js'",
+    "test.watch": "jest --watchAll",
+    "test.coverage": "jest --coverage",
+    "test.ci": "jest --ci --runInBand",
     "lint": "eslint .",
     "lint.fix": "eslint . --fix"
   },
@@ -50,6 +50,7 @@
     "@hapi/joi": "16.1.8",
     "body-parser": "1.19.0",
     "bunyan": "1.8.12",
+    "config": "3.2.6",
     "express": "4.17.1",
     "helmet": "3.21.2"
   },

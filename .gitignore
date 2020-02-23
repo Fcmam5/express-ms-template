@@ -30,9 +30,4 @@ node_modules/
 # Output of 'npm pack'
 *.tgz
 
-# dotenv environment variables file
-.env
-.env.production
-!.env.test
-
 .stryker-tmp

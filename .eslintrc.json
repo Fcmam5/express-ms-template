@@ -18,8 +18,22 @@
     "plugin:security/recommended",
     "prettier"
   ],
-  "plugins": ["prettier", "sonarjs", "security"],
+  "plugins": [
+    "prettier",
+    "sonarjs",
+    "security"
+  ],
   "rules": {
     "no-underscore-dangle": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/test/**/*.test.js"
+      ],
+      "rules": {
+        "global-require": "off"
+      }
+    }
+  ]
 }
