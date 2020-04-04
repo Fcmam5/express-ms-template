@@ -5,7 +5,8 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node src/bin/www.js",
-    "start.dev": "nodemon src/bin/www.js | bunyan",
+    "dev": "nodemon src/bin/www.js | bunyan",
+    "docker": "docker-compose -f docker-compose.yml up --build",
     "test": "jest",
     "test.watch": "jest --watchAll",
     "test.coverage": "jest --coverage",
@@ -15,30 +16,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Fcmam5/warid.git"
+    "url": "git+https://github.com/Fcmam5/express-ms-template.git"
   },
   "author": "Abdeldjalil Fortas (https://fcmam5.me)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Fcmam5/warid/issues"
+    "url": "https://github.com/Fcmam5/express-ms-template/issues"
   },
-  "homepage": "https://github.com/Fcmam5/warid#readme",
+  "homepage": "https://github.com/Fcmam5/express-ms-template#readme",
   "devDependencies": {
-    "@stryker-mutator/core": "3.0.2",
-    "@stryker-mutator/javascript-mutator": "3.0.2",
-    "@stryker-mutator/jest-runner": "3.0.2",
-    "@types/jest": "25.1.4",
+    "@stryker-mutator/core": "3.1.0",
+    "@stryker-mutator/javascript-mutator": "3.1.0",
+    "@stryker-mutator/jest-runner": "3.1.0",
+    "@types/jest": "25.2.1",
     "eslint": "6.8.0",
     "eslint-config-airbnb-base": "14.1.0",
     "eslint-config-prettier": "6.10.1",
-    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-import": "2.20.2",
     "eslint-plugin-jest": "23.8.2",
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-security": "1.4.0",
     "eslint-plugin-sonarjs": "0.5.0",
     "husky": "4.2.3",
-    "jest": "25.2.3",
-    "lint-staged": "10.0.9",
+    "jest": "25.2.7",
+    "lint-staged": "10.1.1",
     "nodemon": "2.0.2",
     "prettier": "2.0.2"
   },

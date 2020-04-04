@@ -15,6 +15,6 @@ describe('logger configuration', () => {
   it('should define a logger with a given name', () => {
     const name = 'a name';
     mockedLogger(name);
-    expect(mockedBunyan.createLogger).toHaveBeenCalledWith({ name });
+    expect(mockedBunyan.createLogger).toHaveBeenCalledWith({ name, src: true });
   });
 });

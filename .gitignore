@@ -31,3 +31,5 @@ node_modules/
 *.tgz
 
 .stryker-tmp
+
+config/production.js*
