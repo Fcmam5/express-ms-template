@@ -12,7 +12,8 @@
     "test.coverage": "jest --coverage",
     "test.ci": "jest --ci --runInBand",
     "lint": "eslint .",
-    "lint.fix": "eslint . --fix"
+    "lint.fix": "eslint . --fix",
+    "stryker": "stryker run"
   },
   "repository": {
     "type": "git",
@@ -25,32 +26,32 @@
   },
   "homepage": "https://github.com/Fcmam5/express-ms-template#readme",
   "devDependencies": {
-    "@stryker-mutator/core": "3.1.0",
-    "@stryker-mutator/javascript-mutator": "3.1.0",
-    "@stryker-mutator/jest-runner": "3.1.0",
-    "@types/jest": "25.2.1",
-    "eslint": "6.8.0",
-    "eslint-config-airbnb-base": "14.1.0",
-    "eslint-config-prettier": "6.10.1",
-    "eslint-plugin-import": "2.20.2",
-    "eslint-plugin-jest": "23.8.2",
-    "eslint-plugin-prettier": "3.1.2",
+    "@stryker-mutator/core": "^3.3.1",
+    "@stryker-mutator/javascript-mutator": "^3.3.1",
+    "@stryker-mutator/jest-runner": "^3.3.1",
+    "@types/jest": "^26.0.13",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-security": "1.4.0",
     "eslint-plugin-sonarjs": "0.5.0",
-    "husky": "4.2.3",
-    "jest": "25.2.7",
-    "lint-staged": "10.1.1",
-    "nodemon": "2.0.2",
-    "prettier": "2.0.2"
+    "husky": "^4.2.5",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.3.0",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.1"
   },
   "dependencies": {
     "@hapi/boom": "9.1.0",
     "@hapi/joi": "17.1.1",
     "body-parser": "1.19.0",
-    "bunyan": "1.8.12",
+    "bunyan": "^1.8.14",
     "config": "3.3.1",
     "express": "4.17.1",
-    "helmet": "3.22.0"
+    "helmet": "^4.1.0"
   },
   "husky": {
     "hooks": {
