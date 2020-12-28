@@ -69,15 +69,13 @@ server.on('listening', onHttpListening);
 /**
  * Graceful shutdown
  */
-const onSignal = (eventType, exitCode = 1) => {
-  return [
-    eventType,
-    () => {
-      logger.warn(`Received ${eventType} signal, starting cleanup`);
-      process.exit(exitCode);
-    },
-  ];
-};
+const onSignal = (eventType, exitCode = 1) => [
+  eventType,
+  () => {
+    logger.warn(`Received ${eventType} signal, starting cleanup`);
+    process.exit(exitCode);
+  },
+];
 
 process.on(...onSignal('uncaughtException'));
 process.on(...onSignal('SIGINT', 15));

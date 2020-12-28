@@ -61,5 +61,8 @@ describe('controllers/genericHandlers', () => {
     handlers.healthcheck({}, mockResponse);
 
     expect(mockResponse.status).toHaveBeenCalledWith(200);
+    expect(mockResponse.json).toHaveBeenCalledWith({
+      uptime: expect.any(Number),
+    });
   });
 });
